@@ -31,7 +31,6 @@
     --border: 156 8% 12%;
     --input: 158 9% 18%;
     --ring: 161 88% 40%;
-
     --radius: 0.75rem;
   }
 }
@@ -41,13 +40,34 @@
     color-scheme: dark;
     scroll-behavior: smooth;
   }
+  *:hover {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="-8 -8 16 16"><circle cx="0" cy="0" r="4" fill="white"/></svg>')
+        8 8,
+      auto;
+  }
   * {
+    cursor:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="-8 -8 16 16"><circle cx="0" cy="0" r="4" fill="white"/></svg>')
+        8 8,
+      auto;
     @apply border-border;
   }
   body {
     font-family: "Outfit", system-ui;
     font-style: normal;
+
     @apply bg-background text-foreground;
+  }
+  .heading::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 4px;
+    background: white;
+    border-radius: 20px;
   }
 }
 

@@ -1,22 +1,29 @@
+import BGShape from "./ProfileBG";
+
 export default function About() {
   return (
     <>
-      <section
-        id="about"
-        className="mx-auto my-20 max-w-7xl px-4 py-24 lg:px-8"
-      >
-        <div className="mb-10 text-4xl font-bold tracking-wider lg:mb-0 lg:border-4 lg:p-6 lg:text-5xl">
+      <section id="about" className="mx-auto max-w-7xl px-4 py-10">
+        <h2 className="heading relative text-center text-5xl font-bold tracking-wider">
           About Me
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:border-x-4 lg:border-b-4">
-          <div className="flex items-center justify-start lg:justify-center lg:p-8">
-            <img
+        </h2>
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative flex items-center justify-start lg:justify-center lg:p-8">
+            <div className="z-10 mx-auto aspect-square w-3/6 overflow-hidden rounded-full bg-amber-300 sm:w-2/6 lg:w-3/6">
+              <img
+                src="pic.png"
+                alt=""
+                className="relative left-2 top-6 w-full object-cover"
+              />
+            </div>
+            <BGShape className="absolute z-0 h-full w-full opacity-40" />
+            {/* <img
               src="pic.png"
               alt=""
-              className="mx-auto h-auto w-4/6 grayscale lg:w-1/2"
-            />
+              className="mx-auto aspect-square w-4/6 bg-red-500 object-cover grayscale lg:w-1/2"
+            /> */}
           </div>
-          <div className="flex items-center justify-center pt-10 text-lg leading-loose tracking-wider text-white/90 lg:border-l-4 lg:p-8">
+          <div className="flex items-center justify-center pt-10 text-lg leading-loose tracking-wider text-white/90 lg:p-8">
             Motivated and dedicated Frontend Developer with a solid foundation
             in HTML, CSS, JavaScript, and React.js. Experienced in creating
             responsive and user-friendly web applications. Proven ability to
