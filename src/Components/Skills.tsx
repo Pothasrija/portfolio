@@ -7,30 +7,42 @@ import {
   PythonIcon,
   ReactIcon,
   NodeJS,
+  GitIcon,
+  NextJS,
 } from "./icons";
 import Particles from "./magicui/particles";
-
-import Marquee from "./magicui/marquee";
+import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
+// import Marquee from "./magicui/marquee";
 export default function Skills() {
   return (
     <>
-      <section id="skills" className="relative my-20 py-28">
+      <section id="skills" className="relative bg-black/50 py-20">
         <Particles
           className="absolute inset-0"
-          quantity={80}
+          quantity={100}
           ease={80}
           color={"#ffffff"}
           refresh
         />
-        <h2 className="mb-20 text-center text-4xl font-bold tracking-wider lg:text-5xl">
-          Skills
+        <h2 className="heading relative mb-20 text-center text-4xl font-bold tracking-wider lg:text-5xl">
+          My Skills
         </h2>
 
-        <div className="relative mx-auto max-w-7xl">
-          <Marquee pauseOnHover className="[--duration:20s]">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{
+            delayChildren: 0.1,
+            staggerChildren: 0.1,
+          }}
+          className="relative mx-auto flex max-w-4xl flex-wrap justify-center gap-6"
+        >
+          {/* <Marquee pauseOnHover className="[--duration:20s]">
             <div
               className={
-                "relative mx-auto flex size-48 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl border p-4 text-xl font-medium dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+                ""
               }
             >
               <HTMLIcon className="mb-2 w-24" />
@@ -92,11 +104,52 @@ export default function Skills() {
               <NodeJS className="mb-2 w-24" />
               Node JS
             </div>
-          </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
-        </div>
+          </Marquee> */}
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div> */}
+
+          <SkillBox icon={<HTMLIcon className="size-10" />} name="HTML" />
+          <SkillBox icon={<CSSIcon className="size-10" />} name="CSS" />
+          <SkillBox icon={<JsIcon className="size-10" />} name="JavaScript" />
+          <SkillBox icon={<ReactIcon className="size-10" />} name="ReactJS" />
+          <SkillBox icon={<NodeJS className="size-10" />} name="NodeJS" />
+          <SkillBox icon={<MySQL className="size-10" />} name="MySQL" />
+          <SkillBox
+            icon={<BootstrapIcon className="size-10" />}
+            name="Bootstrap"
+          />
+          <SkillBox icon={<PythonIcon className="size-10" />} name="Python" />
+          <SkillBox icon={<GitIcon className="size-10" />} name="Git" />
+          <SkillBox icon={<NextJS className="size-10" />} name="NextJS" />
+        </motion.div>
       </section>
+    </>
+  );
+}
+const cardVariants: Variants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+    },
+  },
+};
+function SkillBox({ name, icon }: { name: string; icon: React.ReactElement }) {
+  return (
+    <>
+      <motion.div
+        variants={cardVariants}
+        className="flex w-max flex-row items-center justify-center gap-2 overflow-hidden rounded-xl border border-gray-50/[.1] bg-gray-50/[.10] px-4 py-2.5 text-lg font-medium transition-colors hover:bg-gray-50/[.15]"
+      >
+        {icon}
+        {name}
+      </motion.div>
     </>
   );
 }

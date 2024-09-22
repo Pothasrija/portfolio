@@ -1,6 +1,5 @@
 import RetroGrid from "./magicui/retro-grid";
 import WordRotate from "./magicui/word-rotate";
-import RoundedElement from "./MouseFollower";
 import { ArrowDown01Icon } from "./icons";
 export default function Hero() {
   return (
@@ -31,7 +30,6 @@ export default function Hero() {
 
         <RetroGrid />
       </section>
-      <RoundedElement />
     </>
   );
 }
