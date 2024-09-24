@@ -17,8 +17,9 @@ function RoundedElement() {
       setPosition({ x: event.clientX, y: event.clientY });
     };
 
-    const elements = document.querySelectorAll("section button");
+    const elements = document.querySelectorAll(".hv-allowed");
 
+    console.log(elements);
     window.addEventListener("mousemove", handleMouseMove);
     elements.forEach((element) => {
       element.addEventListener("mouseenter", elementHovered);
@@ -38,12 +39,14 @@ function RoundedElement() {
     default: {
       x: position.x - 16,
       y: position.y - 16,
+      opacity: 0.9,
     },
     hover: {
       height: 100,
       width: 100,
       x: position.x - 50,
       y: position.y - 50,
+      opacity: 0.3,
     },
   };
   return (

@@ -1,16 +1,16 @@
 import { DashboardSquare01Icon } from "./icons";
 import { Button } from "./ui/button";
 
-import { lazy, useState } from "react";
+// import { lazy, useState } from "react";
 
-const MobileNavbar = lazy(() => import("./MobileNavbar.tsx"));
+// const MobileNavbar = lazy(() => import("./MobileNavbar.tsx"));
 
 export default function Header() {
-  const [navOpen, setNavOpen] = useState(false);
-
-  const handleClick = () => {
-    setNavOpen(true);
-  };
+  //   const [navOpen, setNavOpen] = useState(false);
+  //
+  //   const handleClick = () => {
+  //     setNavOpen(true);
+  //   };
   return (
     <>
       <header className="fixed left-0 right-0 top-0 z-30 h-max py-3">
@@ -49,13 +49,13 @@ export default function Header() {
 
           <Button
             className="md:hidden"
-            onClick={handleClick}
+            // onClick={handleClick}
             size={"icon"}
             variant={"ghost"}
           >
             <DashboardSquare01Icon className="h-5 w-5" />
           </Button>
-          <MobileNavbar setNavOpen={setNavOpen} navOpen={navOpen} />
+          {/* <MobileNavbar setNavOpen={setNavOpen} navOpen={navOpen} /> */}
         </div>
       </header>
     </>

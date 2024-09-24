@@ -1,29 +1,47 @@
-import { LinkedInIcon, MailIcon, PhoneIcon, WhatsappIcon } from "./icons";
+import { GithubIconFill, LinkedInIcon, MailIcon, WhatsappIcon } from "./icons";
+import { motion, Variants } from "framer-motion";
 export default function Contact() {
   return (
     <>
-      <section id="contact" className="relative mx-auto max-w-7xl px-4 py-24">
-        <h2 className="mb-20 text-center text-4xl font-bold lg:text-5xl">
+      <section id="contact" className="relative mx-auto max-w-7xl px-4 py-14">
+        <h2 className="heading relative mb-20 text-center text-4xl font-bold lg:text-5xl">
           Contact Me
         </h2>
 
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-4 text-lg md:grid-cols-2 md:gap-8">
-          <a
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{
+            delayChildren: 0.15,
+            staggerChildren: 0.1,
+          }}
+          className="mx-auto grid max-w-max grid-cols-2 gap-6 text-lg sm:grid-cols-4"
+        >
+          <LinkBox
             href="https://www.linkedin.com/in/p-srija-31b557230/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-6 rounded-2xl border p-6 transition-colors hover:border-blue-500"
-          >
-            <LinkedInIcon className="h-8 w-8" />
-            LinkedIn
-          </a>
-          <a
+            icon={<LinkedInIcon className="h-8 w-8" />}
+          />
+          <LinkBox
             href="mailto:pothasrija97@gmail.com"
+            icon={<MailIcon className="h-8 w-8" />}
+          />
+          <LinkBox
+            href="https://wa.me/919182704402"
+            icon={<WhatsappIcon className="h-8 w-8" />}
+          />
+          <LinkBox
+            href="https://www.linkedin.com/in/p-srija-31b557230/"
+            icon={<GithubIconFill className="h-8 w-8" />}
+          />
+
+          {/* <a
+            
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-6 rounded-2xl border p-6 transition-colors hover:border-orange-500"
           >
-            <MailIcon className="h-8 w-8" />
+            
             Email
           </a>
           <a
@@ -41,9 +59,44 @@ export default function Contact() {
           >
             <PhoneIcon className="h-8 w-8" />
             Call
-          </a>
-        </div>
+          </a> */}
+        </motion.div>
       </section>
+    </>
+  );
+}
+const cardVariants: Variants = {
+  offscreen: {
+    y: 50,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+    },
+  },
+};
+function LinkBox({ href, icon }: { href: string; icon: React.ReactElement }) {
+  return (
+    <>
+      <motion.a
+        href={href}
+        target="_blank"
+        // initial={{
+        //   scale: 1,
+        // }}
+        // whileHover={{
+        //   scale: 1.2,
+        // }}
+        variants={cardVariants}
+        rel="noopener noreferrer"
+        className="hv-allowed flex size-20 flex-row items-center justify-center gap-2 overflow-hidden rounded-2xl border border-gray-50/[.1] bg-gray-50/[.10] text-lg font-medium transition-colors hover:bg-gray-50/[.15]"
+      >
+        {icon}
+      </motion.a>
     </>
   );
 }

@@ -23,7 +23,6 @@ export default function Skills() {
           quantity={100}
           ease={80}
           color={"#ffffff"}
-          refresh
         />
         <h2 className="heading relative mb-20 text-center text-4xl font-bold tracking-wider lg:text-5xl">
           My Skills
@@ -37,7 +36,7 @@ export default function Skills() {
             delayChildren: 0.1,
             staggerChildren: 0.1,
           }}
-          className="relative mx-auto flex max-w-4xl flex-wrap justify-center gap-6"
+          className="relative mx-auto grid max-w-4xl grid-cols-2 gap-6 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
         >
           {/* <Marquee pauseOnHover className="[--duration:20s]">
             <div
@@ -145,7 +144,7 @@ function SkillBox({ name, icon }: { name: string; icon: React.ReactElement }) {
     <>
       <motion.div
         variants={cardVariants}
-        className="flex w-max flex-row items-center justify-center gap-2 overflow-hidden rounded-xl border border-gray-50/[.1] bg-gray-50/[.10] px-4 py-2.5 text-lg font-medium transition-colors hover:bg-gray-50/[.15]"
+        className="flex w-full flex-row items-center justify-center gap-2 overflow-hidden rounded-xl border border-gray-50/[.1] bg-gray-50/[.10] px-4 py-2.5 text-lg font-medium transition-colors hover:bg-gray-50/[.15]"
       >
         {icon}
         {name}

@@ -1,7 +1,16 @@
 import RetroGrid from "./magicui/retro-grid";
 import WordRotate from "./magicui/word-rotate";
 import { ArrowDown01Icon } from "./icons";
+import { useCallback } from "react";
 export default function Hero() {
+  const scrollDown = useCallback(() => {
+    const viewportHeight = window.innerHeight;
+    window.scrollTo({
+      top: viewportHeight - 100,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <section className="relative mx-auto flex h-screen flex-col items-center justify-center">
@@ -21,7 +30,10 @@ export default function Hero() {
             ]}
           />
           <div className="mt-8">
-            <button className="mx-auto flex flex-col items-center justify-center gap-3 text-base md:text-lg">
+            <button
+              onClick={scrollDown}
+              className="hv-allowed mx-auto flex flex-col items-center justify-center gap-3 text-base md:text-lg"
+            >
               Scroll Down
               <ArrowDown01Icon className="h-8 w-8 animate-bounce text-slate-200" />
             </button>
