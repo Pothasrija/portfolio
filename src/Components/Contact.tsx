@@ -1,4 +1,12 @@
-import { GithubIconFill, LinkedInIcon, MailIcon, WhatsappIcon } from "./icons";
+import { Url } from "@/helpers/constant";
+import {
+  FacebookIcon,
+  GithubIconFill,
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  WhatsappIcon,
+} from "./icons";
 import { motion, Variants } from "framer-motion";
 export default function Contact() {
   return (
@@ -16,23 +24,28 @@ export default function Contact() {
             delayChildren: 0.15,
             staggerChildren: 0.1,
           }}
-          className="mx-auto grid max-w-max grid-cols-2 gap-6 text-lg sm:grid-cols-4"
+          className="mx-auto grid max-w-max grid-cols-3 gap-6 text-lg"
         >
           <LinkBox
-            href="https://www.linkedin.com/in/p-srija-31b557230/"
+            href={Url.LinkedIn}
             icon={<LinkedInIcon className="h-8 w-8" />}
           />
+          <LinkBox href={Url.Email} icon={<MailIcon className="h-8 w-8" />} />
           <LinkBox
-            href="mailto:pothasrija97@gmail.com"
-            icon={<MailIcon className="h-8 w-8" />}
-          />
-          <LinkBox
-            href="https://wa.me/919182704402"
+            href={Url.Whatsapp}
             icon={<WhatsappIcon className="h-8 w-8" />}
           />
           <LinkBox
-            href="https://www.linkedin.com/in/p-srija-31b557230/"
+            href={Url.GitHub}
             icon={<GithubIconFill className="h-8 w-8" />}
+          />
+          <LinkBox
+            href={Url.Instagram}
+            icon={<InstagramIcon className="h-8 w-8" />}
+          />
+          <LinkBox
+            href={Url.Facebook}
+            icon={<FacebookIcon className="h-8 w-8" />}
           />
 
           {/* <a

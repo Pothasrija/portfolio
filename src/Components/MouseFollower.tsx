@@ -42,10 +42,10 @@ function RoundedElement() {
       opacity: 0.9,
     },
     hover: {
-      height: 100,
-      width: 100,
-      x: position.x - 50,
-      y: position.y - 50,
+      height: 80,
+      width: 80,
+      x: position.x - 40,
+      y: position.y - 40,
       opacity: 0.3,
     },
   };
