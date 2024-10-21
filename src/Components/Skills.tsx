@@ -9,6 +9,12 @@ import {
   NodeJS,
   GitIcon,
   NextJS,
+  TailwindCSS,
+  AWS,
+  ExpressJS,
+  Django,
+  PostgreSQL,
+  MongoDB,
 } from "./icons";
 import Particles from "./magicui/particles";
 import { motion } from "framer-motion";
@@ -36,7 +42,7 @@ export default function Skills() {
             delayChildren: 0.1,
             staggerChildren: 0.1,
           }}
-          className="relative mx-auto grid max-w-4xl grid-cols-2 gap-6 px-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+          className="relative mx-auto grid max-w-7xl grid-cols-2 gap-2 px-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
         >
           {/* <Marquee pauseOnHover className="[--duration:20s]">
             <div
@@ -120,6 +126,19 @@ export default function Skills() {
           <SkillBox icon={<PythonIcon className="size-10" />} name="Python" />
           <SkillBox icon={<GitIcon className="size-10" />} name="Git" />
           <SkillBox icon={<NextJS className="size-10" />} name="NextJS" />
+          <SkillBox
+            icon={<TailwindCSS className="size-10" />}
+            name="TailwindCSS"
+          />
+          <SkillBox icon={<AWS className="size-10" />} name="AWS" />
+          <SkillBox icon={<MongoDB className="size-10" />} name="MongoDB" />
+          <SkillBox
+            icon={<PostgreSQL className="size-10" />}
+            name="PostgreSQL"
+          />
+
+          <SkillBox icon={<Django className="size-10" />} name="Django" />
+          <SkillBox icon={<ExpressJS className="size-10" />} name="ExpressJS" />
         </motion.div>
       </section>
     </>

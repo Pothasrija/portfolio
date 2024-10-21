@@ -24,14 +24,15 @@ export default function About() {
             /> */}
           </div>
           <div className="flex items-center justify-center pt-10 text-lg leading-loose tracking-wider text-white/90 lg:p-8">
-            Motivated and dedicated Frontend Developer with a solid foundation
-            in HTML, CSS, JavaScript, and React.js. Experienced in creating
-            responsive and user-friendly web applications. Proven ability to
-            work effectively in team settings, communicate technical concepts
-            clearly, and continuously learn and adapt to new technologies.
-            Committed to delivering high-quality work and contributing to the
-            success of the team and company. Seeking a challenging role to
-            leverage my skills and contribute to impactful projects skills.
+            I&apos;m a Full-stack web developer with 4+ years of experience
+            building websites that are easy to use and look great. I know how to
+            use MERN and FARM tools, which include HTML, CSS, JavaScript, React,
+            Node.js, Python, and SQL. I&apos;m also good at using AI to make
+            smart and helpful websites. I can make websites that work on all
+            kinds of devices and are easy for everyone to use. I&apos;m good at
+            working with others, talking clearly, and solving problems. I want
+            to work on exciting projects and team up with talented people to
+            make new things happen in technology.
           </div>
         </div>
       </section>
